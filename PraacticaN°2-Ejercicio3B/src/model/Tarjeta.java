@@ -5,13 +5,20 @@ import excepcions.SaldoException;
 public abstract class Tarjeta {
 
 	protected Double saldo;
-	protected int saldoMin;
-	protected int nroTarjeta;
+	protected Integer saldoMinimo;
+	protected Integer nroTarjeta;
 
-	public Tarjeta(int saldoMin, Double saldo, int nroTarjeta) {
+	public Tarjeta(Integer saldoMinimo, Double saldo, Integer nroTarjeta) {
+
+		if (saldoMinimo.equals(null) || saldo.equals(null) || nroTarjeta.equals(null)) {
+			throw new RuntimeException("Error: faltan datos al momento de crear la tarjeta.\n");
+		}
+		if (saldoMinimo.toString().isEmpty() || saldo.toString().isEmpty() || nroTarjeta.toString().isEmpty()) {
+			throw new RuntimeException("Error: hay campos vacios al momento de crear la tarjeta.\n");
+		}
 
 		this.saldo = saldo;
-		this.saldoMin = saldoMin;
+		this.saldoMinimo = saldoMinimo;
 		this.nroTarjeta = nroTarjeta;
 	}
 
@@ -19,7 +26,7 @@ public abstract class Tarjeta {
 
 	protected void efectuarPago(Double precioFinal) throws SaldoException {
 
-		if (this.saldo - precioFinal < this.saldoMin) {
+		if (this.saldo - precioFinal < this.saldoMinimo) {
 			this.saldo = this.saldo - precioFinal;
 
 		} else {
@@ -28,7 +35,7 @@ public abstract class Tarjeta {
 		}
 	}
 
-	protected Double descuento(Double precio, int descuento) {
+	protected Double descuento(Double precio, Integer descuento) {
 		return (precio - ((descuento * precio) / 100));
 	}
 

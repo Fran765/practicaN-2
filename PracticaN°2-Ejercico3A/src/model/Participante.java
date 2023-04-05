@@ -2,25 +2,33 @@ package model;
 
 public class Participante {
 
-	private int dni;
+	private Integer dni;
 	private String correoElectronico;
-	private int puntos;
+	private Integer puntos;
 
-	public Participante(int dni, String correoElectronico) {
+	public Participante(Integer dni, String correoElectronico) {
+
+		if (dni.equals(null) || correoElectronico.equals(null)) {
+			throw new RuntimeException("Error: faltan datos al momento de crear el participante\n");
+		}
+		if (dni.toString().isEmpty() || correoElectronico.isEmpty()) {
+			throw new RuntimeException("Error: hay campos vacios al momento de crear el participante\n");
+		}
+
 		this.dni = dni;
 		this.correoElectronico = correoElectronico;
 		this.puntos = 0;
 	}
 
-	public void sumarPuntos(int puntos) {
+	public void sumarPuntos(Integer puntos) {
 		this.puntos = this.puntos + puntos;
 	}
 
-	public int devolverCantidadDePuntos() {
+	public Integer devolverCantidadDePuntos() {
 		return puntos;
 	}
 
-	public int devolverDni() {
+	public Integer devolverDni() {
 		return this.dni;
 	}
 

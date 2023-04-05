@@ -2,7 +2,7 @@
 import model.RegistrarInscripto;
 
 public class FakeRegistrarInscripto implements RegistrarInscripto {
-	
+
 	private String infoParticipante;
 
 	@Override
@@ -10,7 +10,7 @@ public class FakeRegistrarInscripto implements RegistrarInscripto {
 
 		this.infoParticipante = infoParticipante;
 	}
-	
+
 	String devolverInformacion() {
 		return this.infoParticipante;
 	}

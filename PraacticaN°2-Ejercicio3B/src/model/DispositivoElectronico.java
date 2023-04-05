@@ -12,6 +12,10 @@ public class DispositivoElectronico {
 	private RegistroComida registro;
 
 	public DispositivoElectronico(RegistroComida registro) {
+
+		if (registro.equals(null) || registro.toString().isEmpty()) {
+			throw new RuntimeException("Error: faltan datos o hay campos vacios al momento de crear el Dispositivo\n");
+		}
 		this.registro = registro;
 		this.importeAbonar = 0.0;
 	}

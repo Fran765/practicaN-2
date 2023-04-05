@@ -78,6 +78,7 @@ class DispositivoElectronicoTest {
 		try {
 			miDispositivo.realizarPago(miComarca, 2);
 		} catch (SaldoException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
