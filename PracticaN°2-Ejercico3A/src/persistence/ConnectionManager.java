@@ -9,17 +9,15 @@ public class ConnectionManager {
 
 		Properties prop = new Properties();
 		try {
-			ResourceBundle infoDataBase = ResourceBundle.getBundle("conn.properties");
-			prop.setProperty("connection", infoDataBase.getString("db.url"));
-			prop.setProperty("username", infoDataBase.getString("db.user"));
-			prop.setProperty("password", infoDataBase.getString("db.password"));
+			ResourceBundle infoDataBase = ResourceBundle.getBundle("conn");
+			prop.setProperty("connection", infoDataBase.getString("connection"));
+			prop.setProperty("username", infoDataBase.getString("username"));
+			prop.setProperty("password", infoDataBase.getString("password"));
 			
 		} catch (Exception e1) {
-			throw new RuntimeException("Ocurrio un error al leer la configuraci�n desde el archivo");
+			throw new RuntimeException("Ocurrio un error al leer la configuraci�n desde el archivo " + e1.getMessage());
 		}
 		return prop;
 
 	}
-
-
 }

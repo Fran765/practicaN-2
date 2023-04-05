@@ -11,8 +11,7 @@ import model.RegistrarInscripto;
 
 public class BaseDatosRegistrarInscripto implements RegistrarInscripto {
 
-	private String create = "INSERT INTO concurso_participante(id_concurso, id_participante, fecha_inscripcion)"
-			+ "INSERT INTO(?, ?, ?)";
+	private String create = "INSERT INTO concurso_participante(info) VALUES(?)";
 
 	private Properties prop;
 
@@ -28,18 +27,14 @@ public class BaseDatosRegistrarInscripto implements RegistrarInscripto {
 				prop.getProperty("password"));
 
 				PreparedStatement statement = conn.prepareStatement(create);) {
-
-			String[] parts = infoParticipante.split("||");
-
-			statement.setDate(1, java.sql.Date.valueOf(parts[0]));
-			statement.setInt(2, Integer.parseInt(parts[1]));
-			statement.setInt(3, Integer.parseInt(parts[2]));
+			
+			statement.setString(1, infoParticipante);
 
 		} catch (SQLException e) {
-			throw new RuntimeException("Error al procesar consulta en base de datos", e);
+			throw new RuntimeException("Error al procesar consulta en base de datos " + e.getMessage());
 
 		} catch (Exception e) {
-			throw new RuntimeException("Error al insertar en base de datos", e);
+			throw new RuntimeException("Error al insertar en base de datos " + e.getMessage());
 		}
 	}
 }

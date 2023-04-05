@@ -1,6 +1,8 @@
 package model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import excepcions.SaldoException;
 import persistence.EnDiscoRegistroComida;
@@ -38,7 +40,7 @@ public class DispositivoElectronico {
 
 	private void dejarRegistro(Double monto) {
 
-		String fechaHoraImporte = LocalDateTime.now().toString() + " || " + monto + "\n";
+		String fechaHoraImporte = DateTimeFormatter.ofPattern("dd-MM-yyyy").format(LocalDate.now()) + " || " + monto;
 
 		this.registro.registrarAlmuerzoCena(fechaHoraImporte);
 

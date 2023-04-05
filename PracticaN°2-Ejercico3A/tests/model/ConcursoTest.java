@@ -1,3 +1,4 @@
+package model;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +15,7 @@ class ConcursoTest {
 
 	@Test
 	void testInscribirParticipanteAConcurso() {
-
+ 
 		FakeRegistrarInscripto registroFake = new FakeRegistrarInscripto();
 
 		FakeNotificarRegistro notificacionFake = new FakeNotificarRegistro();
@@ -106,7 +107,7 @@ class ConcursoTest {
 
 	private String textoAValidar(Participante inscripto, Concurso elConcurso) {
 		return DateTimeFormatter.ofPattern("dd-MM-yyyy").format(LocalDate.now()) + " || "
-				+ (elConcurso.devolverIdentificador() + "") + " || " + (inscripto.devolverDni() + "\n");
+				+ (elConcurso.devolverIdentificador() + "") + " || " + (inscripto.devolverDni());
 	}
 
 }

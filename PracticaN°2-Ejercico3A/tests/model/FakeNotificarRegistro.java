@@ -1,4 +1,4 @@
-import model.NotificarRegistro;
+package model;
 
 public class FakeNotificarRegistro implements NotificarRegistro{
 	

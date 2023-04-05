@@ -23,7 +23,7 @@ public class EnDiscoRegistrarInscripto implements RegistrarInscripto {
 		} catch (IOException e) {
 			throw new RuntimeException("No se pudo persistir...", e);
 		}
-
+ 
 	}
 
 }

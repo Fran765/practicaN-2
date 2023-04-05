@@ -8,7 +8,7 @@ import excepcions.FueraTerminoException;
 
 public class Concurso {
 
-	private static String mensajeNotificacionRegistroExitoso = "Se pudo inscribir con exito al concurso.";
+	private static String MENSAJENOTIFICACIONREGISTROEXITOSO = "Se pudo inscribir con exito al concurso.";
 
 	private Integer idConcurso;
 	private Set<Participante> participantes;
@@ -59,7 +59,7 @@ public class Concurso {
 
 		String fecha = DateTimeFormatter.ofPattern("dd-MM-yyyy").format(LocalDate.now());
 
-		String fechaParticipanteCurso = fecha + " || " + (this.idConcurso + "") + " || " + (nuevo.devolverDni() + "\n");
+		String fechaParticipanteCurso = fecha + " || " + (this.idConcurso) + " || " + (nuevo.devolverDni());
 
 		this.registro.registrar(fechaParticipanteCurso);
 
@@ -77,7 +77,7 @@ public class Concurso {
 
 	private void notificarInscripcion(Participante nuevo) {
 
-		this.medioNotificacion.notificar(nuevo.consultarDireccionEmail(), mensajeNotificacionRegistroExitoso);
+		this.medioNotificacion.notificar(nuevo.consultarDireccionEmail(), MENSAJENOTIFICACIONREGISTROEXITOSO);
 
 	}
 
@@ -86,7 +86,7 @@ public class Concurso {
 	}
 
 	public String devolverTextoDeMensajeExitoso() {
-		return this.mensajeNotificacionRegistroExitoso;
+		return this.MENSAJENOTIFICACIONREGISTROEXITOSO;
 	}
 
 }

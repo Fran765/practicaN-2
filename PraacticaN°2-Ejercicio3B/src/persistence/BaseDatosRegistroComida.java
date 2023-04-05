@@ -11,7 +11,7 @@ import model.RegistroComida;
 
 public class BaseDatosRegistroComida implements RegistroComida {
 
-	private String create = "INSERT INTO fecha_importe(fecha, importe)" + "INSERT INTO(?, ?)";
+	private String create = "INSERT INTO fecha_importe(informacion) VALUES(?)";
 
 	private Properties prop;
 
@@ -28,10 +28,7 @@ public class BaseDatosRegistroComida implements RegistroComida {
 
 				PreparedStatement statement = conn.prepareStatement(create);) {
 
-			String[] parts = datosAlmuerzoCena.split("||");
-
-			statement.setDate(1, java.sql.Date.valueOf(parts[0]));
-			statement.setInt(2, Integer.parseInt(parts[1]));
+			statement.setString(1, datosAlmuerzoCena);
 
 		} catch (SQLException e) {
 			throw new RuntimeException("Error al procesar consulta en base de datos", e);
