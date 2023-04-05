@@ -1,6 +1,7 @@
-package tests;
 
 import static org.junit.Assert.assertEquals;
+
+import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +40,9 @@ class DispositivoElectronicoTest {
 		Double resultado = 9265.725;
 
 		assertEquals(resultado, miDispositivo.devolverImporteAPagar());
+
+		assertEquals(LocalDateTime.now().toString() + " || " + miDispositivo.devolverImporteAPagar(),
+				soloParaTest.devolverInformacion());
 	}
 
 	@Test
@@ -62,6 +66,9 @@ class DispositivoElectronicoTest {
 		Double resultado = 8950.7;
 
 		assertEquals(resultado, miDispositivo.devolverImporteAPagar());
+
+		assertEquals(LocalDateTime.now().toString() + " || " + miDispositivo.devolverImporteAPagar(),
+				soloParaTest.devolverInformacion());
 	}
 
 	@Test
@@ -78,12 +85,16 @@ class DispositivoElectronicoTest {
 		try {
 			miDispositivo.realizarPago(miComarca, 2);
 		} catch (SaldoException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		Double resultado = 8846.46;
 
 		assertEquals(resultado, miDispositivo.devolverImporteAPagar());
+
+		assertEquals(LocalDateTime.now().toString() + " || " + miDispositivo.devolverImporteAPagar(),
+				soloParaTest.devolverInformacion());
 	}
 
 	@Test
@@ -107,6 +118,9 @@ class DispositivoElectronicoTest {
 		Double resultado = 9292.5;
 
 		assertEquals(resultado, miDispositivo.devolverImporteAPagar());
+
+		assertEquals(LocalDateTime.now().toString() + " || " + miDispositivo.devolverImporteAPagar(),
+				soloParaTest.devolverInformacion());
 	}
 
 	private Pedido instanciarPedido() {
