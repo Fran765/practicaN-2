@@ -38,7 +38,7 @@ public class DispositivoElectronico {
 
 	private void dejarRegistro(Double monto) {
 
-		String fechaHoraImporte = "Fecha: " + LocalDateTime.now().toString() + " Importe: " + monto + "\n";
+		String fechaHoraImporte = LocalDateTime.now().toString() + " || " + monto + "\n";
 
 		this.registro.registrarAlmuerzoCena(fechaHoraImporte);
 
