@@ -3,15 +3,15 @@ package model;
 import java.time.LocalDateTime;
 
 import excepcions.SaldoException;
-import persistence.RegistrarAlmuerzoCenaEnDisco;
+import persistence.EnDiscoRegistroComida;
 
 public class DispositivoElectronico {
 
 	private Pedido miPedido;
 	private Double importeAbonar;
-	private RegistrarAlmuerzoCenaEnDisco registro;
+	private EnDiscoRegistroComida registro;
 
-	public DispositivoElectronico(RegistrarAlmuerzoCenaEnDisco registro) {
+	public DispositivoElectronico(EnDiscoRegistroComida registro) {
 		this.registro = registro;
 		this.importeAbonar = 0.0;
 	}

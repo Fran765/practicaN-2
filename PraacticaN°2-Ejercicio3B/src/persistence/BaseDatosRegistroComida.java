@@ -34,10 +34,10 @@ public class BaseDatosRegistroComida implements RegistroComida {
 			statement.setInt(2, Integer.parseInt(parts[1]));
 
 		} catch (SQLException e) {
-			System.out.println("Error al procesar consulta" + e);
+			throw new RuntimeException("Error al procesar consulta en base de datos", e);
 
 		} catch (Exception e) {
-			System.out.println("Error al insertar un punto: " + e);
+			throw new RuntimeException("Error al insertar en base de datos", e);
 		}
 	}
 

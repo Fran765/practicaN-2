@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import exceptions.FueraTerminoException;
 import model.Concurso;
 import model.Participante;
-import persistence.RegistrarParticipanteEnDisco;
+import persistence.EnDiscoRegistrarInscripto;
 
 class ConcursoTest {
 
@@ -19,7 +19,7 @@ class ConcursoTest {
 	void testInscribirParticipante1() {
 
 		Concurso primerConcurso = new Concurso(1, LocalDate.now().minusDays(2), LocalDate.now().plusDays(8),
-				new RegistrarParticipanteEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
+				new EnDiscoRegistrarInscripto("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
 		Participante miParticipante = new Participante(42699344);
 
 		try {
@@ -39,7 +39,7 @@ class ConcursoTest {
 	void testInscribirParticipante2() {
 
 		Concurso segundoConcurso = new Concurso(2, LocalDate.now(), LocalDate.now().plusDays(8),
-				new RegistrarParticipanteEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
+				new EnDiscoRegistrarInscripto("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
 		Participante miParticipante = new Participante(39584452);
 
 		try {
@@ -62,7 +62,7 @@ class ConcursoTest {
 	void testInscribirParticipante3() {
 
 		Concurso tercerConcurso = new Concurso(3, LocalDate.now().minusDays(16), LocalDate.now().minusDays(2),
-				new RegistrarParticipanteEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
+				new EnDiscoRegistrarInscripto("C:\\Users\\franm\\OneDrive\\Escritorio\\planilla.txt"));
 		Participante miParticipante = new Participante(42699344);
 
 		try {

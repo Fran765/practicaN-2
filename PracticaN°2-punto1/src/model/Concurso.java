@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import exceptions.FueraTerminoException;
-import persistence.RegistrarParticipanteEnDisco;
+import persistence.EnDiscoRegistrarInscripto;
 
 public class Concurso {
 
@@ -14,12 +14,12 @@ public class Concurso {
 	private Set<Participante> participantes;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
-	private RegistrarParticipanteEnDisco planilla;
+	private EnDiscoRegistrarInscripto planilla;
 
 	public Concurso(int idConcurso, LocalDate InicioIncripcion, LocalDate FinInscripcion,
-			RegistrarParticipanteEnDisco planilla) {
+			EnDiscoRegistrarInscripto planilla) {
 		this.idConcurso = idConcurso;
-		this.participantes = new HashSet();
+		this.participantes = new HashSet<Participante>();
 		this.fechaInicio = InicioIncripcion;
 		this.fechaFin = FinInscripcion;
 		this.planilla = planilla;

@@ -11,7 +11,7 @@ public class FakeNotificarRegistro implements NotificarRegistro{
 		
 	}
 	
-	String getMensaje() {
+	String devolverMensajeGuardado() {
 		return this.mensaje;
 	}
 

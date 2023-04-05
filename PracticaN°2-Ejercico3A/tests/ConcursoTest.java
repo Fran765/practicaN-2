@@ -33,7 +33,7 @@ class ConcursoTest {
 
 			assertEquals(this.textoAValidar(miParticipante, primerConcurso), registroFake.devolverInformacion());
 
-			assertEquals(primerConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.getMensaje());
+			assertEquals(primerConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.devolverMensajeGuardado());
 
 		} catch (FueraTerminoException e) {
 
@@ -64,7 +64,7 @@ class ConcursoTest {
 
 			assertEquals(this.textoAValidar(miParticipante, segundoConcurso), registroFake.devolverInformacion());
 
-			assertEquals(segundoConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.getMensaje());
+			assertEquals(segundoConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.devolverMensajeGuardado());
 
 		} catch (FueraTerminoException e) {
 
@@ -94,7 +94,7 @@ class ConcursoTest {
 
 			assertEquals(this.textoAValidar(miParticipante, tercerConcurso), registroFake.devolverInformacion());
 
-			assertEquals(tercerConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.getMensaje());
+			assertEquals(tercerConcurso.devolverTextoDeMensajeExitoso(), notificacionFake.devolverMensajeGuardado());
 
 		} catch (FueraTerminoException e) {
 

@@ -15,9 +15,9 @@ public class BaseDatosRegistrarInscripto implements RegistrarInscripto {
 			+ "INSERT INTO(?, ?, ?)";
 
 	private Properties prop;
-	
+
 	public BaseDatosRegistrarInscripto(Properties p) {
-		
+
 		this.prop = Objects.requireNonNull(p);
 	}
 
@@ -36,10 +36,10 @@ public class BaseDatosRegistrarInscripto implements RegistrarInscripto {
 			statement.setInt(3, Integer.parseInt(parts[2]));
 
 		} catch (SQLException e) {
-			System.out.println("Error al procesar consulta" + e);
+			throw new RuntimeException("Error al procesar consulta en base de datos", e);
 
 		} catch (Exception e) {
-			System.out.println("Error al insertar un punto: " + e);
+			throw new RuntimeException("Error al insertar en base de datos", e);
 		}
 	}
 }

@@ -4,16 +4,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Objects;
 
-import model.RegistrarInscripto;
+import model.ResgitrarInscripto;
 
-public class EnDiscoRegistrarInscripto implements RegistrarInscripto {
+public class EnDiscoRegistrarInscripto implements ResgitrarInscripto {
 
 	private String ruta;
 
 	public EnDiscoRegistrarInscripto(String ruta) {
-		this.ruta =  Objects.requireNonNull(ruta);
+		this.ruta = ruta;
 	}
 
 	@Override

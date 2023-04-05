@@ -20,6 +20,7 @@ public class EnDiscoRegistroComida implements RegistroComida {
 		try {
 			Files.write(Paths.get(direccion), datosAlmuerzoCena.getBytes(), StandardOpenOption.APPEND);
 		} catch (IOException e) {
+
 			throw new RuntimeException("No se pudo persistir...", e);
 		}
 

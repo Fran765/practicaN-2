@@ -26,6 +26,7 @@ public class Main {
 		try {
 			concursoDeSistemas.inscribirParticipante(miParticipante);
 			concursoDeMatematicas.inscribirParticipante(miParticipante);
+
 		} catch (FueraTerminoException e) {
 
 			e.printStackTrace();

@@ -14,7 +14,7 @@ import model.Platos;
 import model.Tarjeta;
 import model.Viedma;
 import model.Visa;
-import persistence.RegistrarAlmuerzoCenaEnDisco;
+import persistence.EnDiscoRegistroComida;
 
 class DispositivoElectronicoTest {
 
@@ -24,7 +24,7 @@ class DispositivoElectronicoTest {
 		Tarjeta miVisa = new Visa(20000, 10000.0, 5547, 3);
 
 		DispositivoElectronico miDispositivo = new DispositivoElectronico(
-				new RegistrarAlmuerzoCenaEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
+				new EnDiscoRegistroComida("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
 
 		miDispositivo.tomarPedido(this.instanciarPedido());
 
@@ -46,7 +46,7 @@ class DispositivoElectronicoTest {
 		Tarjeta miMasterCard = new MasterCard(20000, 10000.0, 3090, 2);
 
 		DispositivoElectronico miDispositivo = new DispositivoElectronico(
-				new RegistrarAlmuerzoCenaEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
+				new EnDiscoRegistroComida("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
 
 		miDispositivo.tomarPedido(this.instanciarPedido());
 
@@ -68,7 +68,7 @@ class DispositivoElectronicoTest {
 		Tarjeta miComarca = new ComarcaPlus(20000, 10000.0, 7448, 2);
 
 		DispositivoElectronico miDispositivo = new DispositivoElectronico(
-				new RegistrarAlmuerzoCenaEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
+				new EnDiscoRegistroComida("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
 
 		miDispositivo.tomarPedido(this.instanciarPedido());
 
@@ -90,7 +90,7 @@ class DispositivoElectronicoTest {
 		Tarjeta miViedma = new Viedma(20000, 10000.0, 5222, 0);
 
 		DispositivoElectronico miDispositivo = new DispositivoElectronico(
-				new RegistrarAlmuerzoCenaEnDisco("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
+				new EnDiscoRegistroComida("C:\\Users\\franm\\OneDrive\\Escritorio\\registroResto.txt"));
 
 		miDispositivo.tomarPedido(this.instanciarPedido());
 
